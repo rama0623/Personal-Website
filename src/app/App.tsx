@@ -7,10 +7,11 @@ import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Navigation } from './components/Navigation';
 import { Routes, Route } from 'react-router-dom';
+import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Navigation />
       <main>
         <Routes>
@@ -23,6 +24,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+       <Footer/>
     </div>
+    
   );
 }

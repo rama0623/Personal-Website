@@ -39,6 +39,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Brand palette */
+  --brand-yellow: #F5E60C;
+  --brand-yellow-soft: #FBF6C4;
+  --brand-black: #0B0B0B;
+  --brand-gray: #F2F2F2;
 }
 
 .dark {
@@ -126,6 +132,11 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
   }
 
   /**

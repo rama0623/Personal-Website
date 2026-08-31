@@ -32,7 +32,7 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24" style={{ backgroundColor: 'bg-white' }}>
+    <section id="projects" className="py-24" style={{ backgroundColor: 'var(--brand-black)' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
         >
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-none text-black">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-none text-white">
             My Best Projects
           </h2>
           {/* <p className="text-white/60 max-w-sm">
@@ -58,9 +58,9 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-gray rounded-2xl p-6 sm:p-8 flex flex-col"
+              className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col"
             >
-              <div className="flex items-start justify-between mb-4 ">
+              <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="font-semibold text-lg text-black mb-1">{project.title}</h3>
                   <p className="text-xs uppercase tracking-wide text-black/50">

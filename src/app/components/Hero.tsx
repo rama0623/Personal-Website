@@ -1,105 +1,61 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import profile from '../../images/profile.jpg';
 
 export function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-              Rama Bhaskara
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 mb-4">
-              Software Engineering Student & Full-Stack Developer
-            </p>
-            <div className="flex items-center justify-center gap-2 text-gray-500 mb-8">
-              <MapPin size={20} />
-              <span>Newcastle upon Tyne, UK</span>
-            </div>
-          </motion.div>
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden pt-32 pb-16 flex flex-col"
+      style={{
+        background:
+          'radial-gradient(120% 100% at 50% 0%, var(--brand-yellow) 0%, var(--brand-yellow-soft) 45%, #ffffff 85%)',
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 w-full flex-1 flex flex-col">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="font-display uppercase leading-[0.85] tracking-tight text-black text-center mb-6"
+          style={{ fontSize: 'clamp(3rem, 12vw, 9.5rem)' }}
+        >
+          Bhaskara<span className="align-top text-[0.35em]">©</span>
+        </motion.h1>
 
+        <div className="flex flex-col md:flex-row justify-between gap-4 text-sm sm:text-base text-black/70 max-w-4xl mx-auto w-full mb-10">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
-          >
-            Computer Science student at Newcastle University with experience in full-stack development, 
-            AI integration, and building scalable web applications. Passionate about creating impactful 
-            solutions that improve user experiences.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          >
-            <button
-              onClick={scrollToContact}
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Get In Touch
-            </button>
-            <a
-              href="https://linkedin.com/in/LINKEDN"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              View Resume
-            </a>
-          </motion.div>
-
-          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex gap-6 justify-center"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="md:max-w-xs"
           >
-            <a
-              href="https://linkedin.com/in/LINKEDN"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="https://github.com/ramabhaskara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="mailto:ramaBhaskara23@gmail.com"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              <Mail size={24} />
-            </a>
-          </motion.div>
+            Hi, I'm Rama Bhaskara — a Computer Science student in Newcastle. I build full-stack
+            apps and explore AI-driven solutions.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="md:max-w-xs md:text-right"
+          >
+            I bring ideas to life through clean engineering, thoughtful design, and hands-on
+            collaboration.
+          </motion.p>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative mx-auto w-40 sm:w-56 md:w-64 aspect-square rounded-full overflow-hidden"
+        >
+          <ImageWithFallback
+            src={profile}
+            alt="Rama Bhaskara"
+            className="w-full h-full object-cover rounded-full"
+          />
+        </motion.div>
       </div>
     </section>
   );
